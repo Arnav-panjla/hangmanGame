@@ -1,0 +1,43 @@
+.keyboard-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 100vw;
+    height: 100vh;
+    gap: .4em;
+
+}
+.keyboard-button{
+    height: 75px;
+    aspect-ratio: 1;
+    font-size: 40px;
+    border-radius: 10px;
+    justify-content: space-evenly;
+}
+.keyboard-button:hover:not(:disabled){
+    transform: scale(1.05);
+    transition: 0.05s;
+    background-color: aquamarine;
+}
+.keyboard-button:focus:not(:disabled){
+    transform: scale(0.95);
+    transition: 0.05s;
+    background-color: aquamarine;
+}
+.keyboard-button-inactive{
+    height: 75px;
+    aspect-ratio: 1;
+    font-size: 40px;
+    border-radius: 10px;
+    justify-content: space-evenly;
+    opacity: .3;
+    transform: scale(0.95);
+}
+.keyboard-button-active{
+    height: 75px;
+    aspect-ratio: 1;
+    font-size: 40px;
+    border-radius: 10px;
+    justify-content: space-evenly;
+    background-color: aqua;
+}
