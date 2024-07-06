@@ -12,8 +12,6 @@ function getWord() {
 
 function App() {
 
-
-
   const [wordToGuess, setWordToGuess] = useState(getWord)
   const [guessedLetters, setGuessedLetters] = useState<string[]>([])
   
@@ -29,18 +27,14 @@ function App() {
       if (guessedLetters.includes(letter) || isWinner || isLoser) return
 
       setGuessedLetters(currentLetters => [...currentLetters, letter])
-    },
-    [guessedLetters,isLoser,isWinner]
-  ) 
+    },[guessedLetters,isLoser,isWinner]) 
 
   useEffect(() => {
     const handler = (e: KeyboardEvent) => {
       const key = e.key;
       if (!key.match(/^[a-z]$/)) return
-
       e.preventDefault();
       addGuessedLetter(key);
-      
     };
     document.addEventListener("keypress", handler);
     return () => {
@@ -55,7 +49,7 @@ function App() {
       <span className="result-text">
         {
         `${isWinner ? "Congrats ! You win. 🥳" : ""}
-        ${isLoser ? "You Lost! 👹 " : ""}`
+        ${isLoser ? "You Lost! 👹 👹 👹 " : ""}`
         }
       </span>
       <Hangman incorrectLetters = {incorrectLetters}/>
